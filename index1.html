@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alfalah School - Shaping Future Leaders</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* Modern Color Palette & CSS Variables */
+        :root {
+            --navy-primary: #0B2545;
+            --navy-dark: #051329;
+            --navy-light: #133966;
+            --yellow-accent: #FFC107;
+            --yellow-hover: #E0A800;
+            --yellow-soft: #FFF8E1;
+            --bg-light: #F8FAFC;
+            --text-dark: #1E293B;
+            --text-muted: #64748B;
+            --card-shadow: 0 10px 30px -5px rgba(11, 37, 69, 0.08);
+            --hover-shadow: 0 20px 40px -10px rgba(11, 37, 69, 0.18);
+            --transition-smooth: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            overflow-x: hidden;
+            line-height: 1.7;
+        }
+
+        /* Navigation Bar Styles */
+        .navbar-custom {
+            background-color: var(--navy-primary);
+            padding: 1.1rem 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            transition: var(--transition-smooth);
+        }
+
+        .navbar-brand {
+            font-weight: 800;
+            font-size: 1.6rem;
+            color: var(--yellow-accent) !important;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-link {
+            color: #E2E8F0 !important;
+            font-weight: 500;
+            padding: 0.6rem 1.2rem !important;
+            border-radius: 8px;
+            transition: var(--transition-smooth);
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--yellow-accent) !important;
+            background-color: rgba(255, 193, 7, 0.1);
+        }
+
+        .dropdown-menu-custom {
+            background-color: var(--navy-dark);
+            border: 2px solid var(--yellow-accent);
+            border-radius: 12px;
+            padding: 0.8rem;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+            margin-top: 10px;
+        }
+
+        .dropdown-item-custom {
+            color: #FFFFFF !important;
+            padding: 0.7rem 1.2rem;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: var(--transition-smooth);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .dropdown-item-custom:hover {
+            background-color: var(--yellow-accent) !important;
+            color: var(--navy-dark) !important;
+            transform: translateX(5px);
+        }
+
+        /* Hero Banner Section */
+        .hero-section {
+            position: relative;
+            min-height: 85vh;
+            background: linear-gradient(135deg, rgba(11, 37, 69, 0.92) 0%, rgba(5, 19, 41, 0.88) 100%),
+                        url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1920&auto=format&fit=crop') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            padding: 6rem 0;
+        }
+
+        .hero-badge {
+            background-color: rgba(255, 193, 7, 0.15);
+            color: var(--yellow-accent);
+            border: 1px solid var(--yellow-accent);
+            padding: 0.5rem 1.25rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+        }
+
+        .btn-yellow {
+            background-color: var(--yellow-accent);
+            color: var(--navy-dark);
+            font-weight: 700;
+            padding: 0.9rem 2.2rem;
+            border-radius: 12px;
+            border: none;
+            transition: var(--transition-smooth);
+            box-shadow: 0 8px 25px rgba(255, 193, 7, 0.3);
+        }
+
+        .btn-yellow:hover {
+            background-color: var(--yellow-hover);
+            color: var(--navy-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(255, 193, 7, 0.4);
+        }
+
+        .btn-outline-light-custom {
+            border: 2px solid rgba(255,255,255,0.3);
+            color: #FFFFFF;
+            font-weight: 600;
+            padding: 0.9rem 2.2rem;
+            border-radius: 12px;
+            transition: var(--transition-smooth);
+        }
+
+        .btn-outline-light-custom:hover {
+            border-color: var(--yellow-accent);
+            color: var(--yellow-accent);
+            background-color: rgba(255, 193, 7, 0.05);
+            transform: translateY(-3px);
+        }
+
+        /* Section Styling */
+        .section-padding {
+            padding: 6rem 0;
+        }
+
+        .section-title-wrapper {
+            margin-bottom: 4rem;
+        }
+
+        .section-subtitle {
+            color: var(--yellow-accent);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-size: 0.88rem;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title {
+            color: var(--navy-primary);
+            font-weight: 800;
+            font-size: 2.5rem;
+            letter-spacing: -0.5px;
+        }
+
+        /* Nav Tabs Custom Styling */
+        .custom-nav-pills {
+            background-color: #FFFFFF;
+            padding: 0.6rem;
+            border-radius: 16px;
+            box-shadow: var(--card-shadow);
+            gap: 8px;
+        }
+
+        .custom-nav-pills .nav-link {
+            color: var(--navy-primary) !important;
+            font-weight: 600;
+            border-radius: 12px;
+            padding: 0.8rem 1.4rem !important;
+            background: transparent;
+
+        }
+
+        .custom-nav-pills .nav-link.active {
+            background-color: var(--navy-primary) !important;
+            color: var(--yellow-accent) !important;
+            box-shadow: 0 4px 15px rgba(11, 37, 69, 0.2);
+        }
+
+        /* Card Custom Styling */
+        .custom-card {
+            background: #FFFFFF;
+            border: 1px solid rgba(0,0,0,0.05);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition-smooth);
+            height: 100%;
+        }
+
+        .custom-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--hover-shadow);
+        }
+
+        /* Image Zoom Animation */
+        .img-zoom-container {
+            overflow: hidden;
+            position: relative;
+            height: 240px;
+        }
+
+        .img-zoom-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .custom-card:hover .img-zoom-container img {
+            transform: scale(1.08);
+        }
+
+        /* Teacher Avatar Badge */
+        .teacher-badge {
+            background: var(--yellow-soft);
+            color: var(--navy-primary);
+            font-weight: 700;
+            font-size: 0.8rem;
+            padding: 0.35rem 0.8rem;
+            border-radius: 50px;
+            display: inline-block;
+        }
+
+        /* Fee Structure Cards */
+        .fee-card {
+            border-top: 5px solid var(--yellow-accent);
+        }
+
+        .price-tag {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--navy-primary);
+        }
+
+        /* Facilities Icon Boxes */
+        .facility-card {
+            padding: 2.5rem 1.8rem;
+            text-align: center;
+            background: #FFFFFF;
+            border-radius: 20px;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition-smooth);
+            border: 1px solid rgba(0, 0, 0, 0.04);
+        }
+
+        .facility-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--hover-shadow);
+            border-color: var(--yellow-accent);
+        }
+
+        .facility-icon-wrapper {
+            width: 80px;
+            height: 80px;
+            background: rgba(11, 37, 69, 0.05);
+            color: var(--navy-primary);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin: 0 auto 1.5rem auto;
+            transition: var(--transition-smooth);
+        }
+
+        .facility-card:hover .facility-icon-wrapper {
+            background: var(--navy-primary);
+            color: var(--yellow-accent);
+        }
+
+        /* ID Card Mockup */
+        .id-card-preview {
+            background: linear-gradient(135deg, var(--navy-primary) 0%, var(--navy-dark) 100%);
+            border-radius: 20px;
+            color: #FFFFFF;
+            padding: 2.5rem;
+            position: relative;
+            border: 2px solid var(--yellow-accent);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+        }
+
+        .id-card-preview::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 120px;
+            height: 120px;
+            background: var(--yellow-accent);
+            opacity: 0.1;
+            border-radius: 0 18px 0 100%;
+        }
+
+        /* Modern Footer */
+        .footer-custom {
+            background-color: var(--navy-dark);
+            color: #CBD5E1;
+            padding-top: 5rem;
+            padding-bottom: 2rem;
+            border-top: 4px solid var(--yellow-accent);
+        }
+
+        .social-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 14px;
+            background-color: rgba(255, 255, 255, 0.06);
+            color: #FFFFFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            transition: var(--transition-smooth);
+            text-decoration: none;
+        }
+
+        .social-btn:hover {
+            background-color: var(--yellow-accent);
+            color: var(--navy-dark);
+            transform: translateY(-4px);
+        }
+
+        /* Modal Customization */
+        .modal-content {
+            border-radius: 20px;
+            border: none;
+            overflow: hidden;
+        }
+
+        .modal-header {
+            background-color: var(--navy-primary);
+            color: #FFFFFF;
+            border-bottom: 3px solid var(--yellow-accent);
+            padding: 1.5rem 2rem;
+        }
+
+        /* Floating Animation */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .floating-element {
+            animation: float 4s ease-in-out infinite;
+        }
+
+        /* Form Controls */
+        .form-control, .form-select {
+            padding: 0.8rem 1.2rem;
+            border-radius: 10px;
+            border: 1.5px solid #E2E8F0;
+        }
+
+        .form-control:focus, .form-select:focus {
+            border-color: var(--navy-primary);
+            box-shadow: 0 0 0 0.25rem rgba(11, 37, 69, 0.15);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sticky Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center gap-3" href="#home">
+                <i class="fa-solid fa-graduation-cap fa-lg text-warning"></i>
+                <span>Alfalah School</span>
+            </a>
+            
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
+                <i class="fa-solid fa-bars text-warning fs-3"></i>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarMain">
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2 mt-3 mt-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home"><i class="fa-solid fa-house me-1"></i> Home</a>
+                    </li>
+                    
+                    <!-- Categories Dropdown Menu -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-warning font-weight-bold" href="#" id="categoryDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa-solid fa-layer-group me-1"></i> Categories
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-custom" aria-labelledby="categoryDropdown">
+                            <li>
+                                <a class="dropdown-item dropdown-item-custom" href="#categories-section" onclick="switchCategoryTab('admission-tab')">
+                                    <i class="fa-solid fa-file-signature text-warning"></i> Admission Form
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item dropdown-item-custom" href="#categories-section" onclick="switchCategoryTab('fee-tab')">
+                                    <i class="fa-solid fa-calculator text-warning"></i> Fee Structure
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item dropdown-item-custom" href="#categories-section" onclick="switchCategoryTab('idcard-tab')">
+                                    <i class="fa-solid fa-id-card text-warning"></i> Student ID Cards & Numbers
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item dropdown-item-custom" href="#categories-section" onclick="switchCategoryTab('teachers-tab')">
+                                    <i class="fa-solid fa-chalkboard-user text-warning"></i> Teachers Name
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item dropdown-item-custom" href="#categories-section" onclick="switchCategoryTab('rooms-tab')">
+                                    <i class="fa-solid fa-door-open text-warning"></i> School Rooms & Labs
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#facilities"><i class="fa-solid fa-shapes me-1"></i> Facilities</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact"><i class="fa-solid fa-phone me-1"></i> Contact</a>
+                    </li>
+                    <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+                        <button class="btn btn-yellow w-100" data-bs-toggle="modal" data-bs-target="#admissionModal">
+                            Apply Online
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Banner Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="row align-items-center gy-5">
+                <div class="col-lg-7 text-center text-lg-start">
+                    <span class="hero-badge floating-element"><i class="fa-solid fa-star me-2"></i> Admitting Students for 2026-2027</span>
+                    <h1 class="display-3 fw-extrabold text-white mb-4" style="line-height: 1.15;">
+                        Empowering Youth for a <span class="text-warning">Brighter Tomorrow</span>
+                    </h1>
+                    <p class="lead text-light mb-5 fs-5" style="max-width: 620px; opacity: 0.9;">
+                        Welcome to Alfalah School. We combine world-class academic standards with modern laboratories, dedicated educators, and holistic values.
+                    </p>
+                    <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center justify-content-lg-start">
+                        <button class="btn btn-yellow btn-lg" data-bs-toggle="modal" data-bs-target="#admissionModal">
+                            <i class="fa-solid fa-paper-plane me-2"></i> Fill Admission Form
+                        </button>
+                        <a href="#categories-section" class="btn btn-outline-light-custom btn-lg">
+                            <i class="fa-solid fa-compass me-2"></i> Explore Campus
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-5 d-none d-lg-block">
+                    <div class="position-relative">
+                        <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=800&auto=format&fit=crop" class="img-fluid rounded-4 shadow-lg border border-3 border-warning" alt="Students in Classroom">
+                        <div class="position-absolute bottom-0 start-0 translate-middle-y bg-navy-dark text-white p-3 rounded-3 shadow border-start border-4 border-warning ms-n4 floating-element" style="max-width: 240px;">
+                            <div class="d-flex align-items-center gap-3">
+                                <i class="fa-solid fa-award fa-2x text-warning"></i>
+                                <div>
+                                    <h6 class="mb-0 fw-bold">100% Success</h6>
+                                    <small class="text-muted">In Board Exams</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Categories Hub Section -->
+    <section id="categories-section" class="section-padding bg-light">
+        <div class="container">
+            <div class="text-center section-title-wrapper">
+                <span class="section-subtitle">Categorized Details</span>
+                <h2 class="section-title">Explore Alfalah School</h2>
+                <p class="text-muted fs-5 mt-2">Select a category below to view detailed information, faculty lists, fee schedules, and photo galleries.</p>
+            </div>
+
+            <!-- Tab Buttons -->
+            <div class="d-flex justify-content-center mb-5">
+                <ul class="nav nav-pills custom-nav-pills flex-column flex-md-row text-center" id="categoryTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="admission-tab" data-bs-toggle="pill" data-bs-target="#pills-admission" type="button" role="tab">
+                            <i class="fa-solid fa-file-signature me-1"></i> Admission Form
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="fee-tab" data-bs-toggle="pill" data-bs-target="#pills-fee" type="button" role="tab">
+                            <i class="fa-solid fa-calculator me-1"></i> Fee Structure
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="idcard-tab" data-bs-toggle="pill" data-bs-target="#pills-idcard" type="button" role="tab">
+                            <i class="fa-solid fa-id-card me-1"></i> ID Cards & Search
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="teachers-tab" data-bs-toggle="pill" data-bs-target="#pills-teachers" type="button" role="tab">
+                            <i class="fa-solid fa-chalkboard-user me-1"></i> Teachers Name
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="rooms-tab" data-bs-toggle="pill" data-bs-target="#pills-rooms" type="button" role="tab">
+                            <i class="fa-solid fa-door-open me-1"></i> Rooms & Labs
+                        </button>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Tab Contents -->
+            <div class="tab-content" id="categoryTabContent">
+
+                <!-- 1. ADMISSION TAB -->
+                <div class="tab-pane fade show active" id="pills-admission" role="tabpanel">
+                    <div class="row align-items-center gy-4">
+                        <div class="col-lg-6">
+                            <div class="custom-card p-4 p-md-5">
+                                <h3 class="fw-bold text-navy mb-3">Online Admission Application</h3>
+                                <p class="text-muted mb-4">Join Alfalah School for a high-quality education. Please fill out the form preview below or submit online.</p>
+                                
+                                <form onsubmit="event.preventDefault(); alert('Admission Form Submitted Successfully!');">
+                                    <div class="mb-3">
+                                        <label class="form-label fw-semibold">Student Full Name</label>
+                                        <input type="text" class="form-control" placeholder="e.g. Muhammad Ali" required>
+                                    </div>
+                                    <div class="row g-3 mb-3">
+                                        <div class="col-md-6">
+                                            <label class="form-label fw-semibold">Grade Applying For</label>
+                                            <select class="form-select" required>
+                                                <option selected disabled value="">Choose Class...</option>
+                                                <option>Playgroup / Nursery</option>
+                                                <option>Primary (Class 1 - 5)</option>
+                                                <option>Middle (Class 6 - 8)</option>
+                                                <option>Metric (Class 9 - 10)</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label fw-semibold">Guardian Contact</label>
+                                            <input type="tel" class="form-control" placeholder="+92 300 0000000" required>
+                                        </div>
+                                    </div>
+                                    <div class="mb-4">
+                                        <label class="form-label fw-semibold">Residential Address</label>
+                                        <textarea class="form-control" rows="2" placeholder="Street, City..."></textarea>
+                                    </div>
+                                    <button type="submit" class="btn btn-yellow w-100 py-3">Submit Application</button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="ps-lg-4">
+                                <div class="img-zoom-container rounded-4 shadow-lg mb-4" style="height: 320px;">
+                                    <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=800&auto=format&fit=crop" alt="Students in Library">
+                                </div>
+                                <div class="bg-white p-4 rounded-4 shadow-sm border-start border-4 border-warning">
+                                    <h5 class="fw-bold text-navy"><i class="fa-solid fa-circle-check text-warning me-2"></i> Required Documents</h5>
+                                    <ul class="text-muted mb-0 mt-2 ps-3">
+                                        <li>2 Passport size photographs</li>
+                                        <li>Copy of Birth Certificate / B-Form</li>
+                                        <li>Previous School Leaving Certificate</li>
+                                        <li>Copy of Guardian CNIC</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. FEE STRUCTURE TAB -->
+                <div class="tab-pane fade" id="pills-fee" role="tabpanel">
+                    <div class="row g-4 justify-content-center">
+                        <div class="col-md-4">
+                            <div class="custom-card fee-card p-4 text-center">
+                                <div class="mb-3 text-warning"><i class="fa-solid fa-shapes fa-3x"></i></div>
+                                <h4 class="fw-bold text-navy">Primary Level</h4>
+                                <p class="text-muted small">Class Nursery to Grade 5</p>
+                                <div class="price-tag my-3">Rs. 3,500 <span class="fs-6 text-muted fw-normal">/ month</span></div>
+                                <ul class="list-unstyled text-muted my-4 gap-2 d-flex flex-column">
+                                    <li><i class="fa-solid fa-check text-success me-2"></i> Tuition Fee Included</li>
+                                    <li><i class="fa-solid fa-check text-success me-2"></i> Smart Classroom Access</li>
+                                    <li><i class="fa-solid fa-check text-success me-2"></i> Sports & Activity Facilities</li>
+                                </ul>
+                                <button class="btn btn-outline-navy w-100 fw-bold border-2" data-bs-toggle="modal" data-bs-target="#admissionModal">Apply Now</button>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="custom-card fee-card p-4 text-center border-warning shadow-lg" style="border-top-width: 8px;">
+                                <span class="badge bg-warning text-dark font-weight-bold mb-2">Most Popular</span>
+                                <h4 class="fw-bold text-navy">Middle Level</h4>
+                                <p class="text-muted small">Grade 6 to Grade 8</p>
+                                <div class="price-tag my-3">Rs. 4,500 <span class="fs-6 text-muted fw-normal">/ month</span></div>
+                                <ul class="list-unstyled text-muted my-4 gap-2 d-flex flex-column">
+                                    <li><i class="fa-solid fa-check text-success me-2"></i> Science & Computer Labs</li>
+                                    <li><i class="fa-solid fa-check text-success me-2"></i> Digital Library Access</li>
+                                    <li><i class="fa-solid fa-check text-success me-2"></i> Extra-Curricular Clubs</li>
+                                </ul>
+                                <button class="btn btn-yellow w-100 fw-bold" data-bs-toggle="modal" data-bs-target="#admissionModal">Apply Now</button>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="custom-card fee-card p-4 text-center">
+                                <div class="mb-3 text-warning"><i class="fa-solid fa-graduation-cap fa-3x"></i></div>
+                                <h4 class="fw-bold text-navy">Secondary Level</h4>
+                                <p class="text-muted small">Grade 9 & Grade 10 (Metric)</p>
+                                <div class="price-tag my-3">Rs. 5,500 <span class="fs-6 text-muted fw-normal">/ month</span></div>
+                                <ul class="list-unstyled text-muted my-4 gap-2 d-flex flex-column">
+                                    <li><i class="fa-solid fa-check text-success me-2"></i> Board Exam Preparation</li>
+                                    <li><i class="fa-solid fa-check text-success me-2"></i> High-End Lab Experiments</li>
+                                    <li><i class="fa-solid fa-check text-success me-2"></i> Career Counseling Sessions</li>
+                                </ul>
+                                <button class="btn btn-outline-navy w-100 fw-bold border-2" data-bs-toggle="modal" data-bs-target="#admissionModal">Apply Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. STUDENT ID CARDS TAB -->
+                <div class="tab-pane fade" id="pills-idcard" role="tabpanel">
+                    <div class="row align-items-center gy-5">
+                        <div class="col-lg-5">
+                            <div class="id-card-preview">
+                                <div class="d-flex align-items-center justify-content-between mb-4">
+                                    <div class="d-flex align-items-center gap-2">
+                                        <i class="fa-solid fa-graduation-cap fa-2x text-warning"></i>
+                                        <span class="fw-bold fs-5 text-warning">ALFALAH SCHOOL</span>
+                                    </div>
+                                    <span class="badge bg-warning text-dark fw-bold">ID CARD</span>
+                                </div>
+                                <div class="text-center my-4">
+                                    <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=200&auto=format&fit=crop" class="rounded-circle border border-3 border-warning shadow" width="100" height="100" style="object-fit: cover;" alt="Student Photo">
+                                    <h4 class="fw-bold mt-3 mb-1">Abdullah Ahmed</h4>
+                                    <p class="text-warning small mb-0">Class: 9th - Section A</p>
+                                </div>
+                                <div class="row g-2 pt-3 border-top border-secondary small">
+                                    <div class="col-6"><strong>Roll No:</strong> <span id="preview-roll">AFS-2026-904</span></div>
+                                    <div class="col-6 text-end"><strong>Emergency:</strong> +92 300 1234567</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-7">
+                            <div class="custom-card p-4 p-md-5">
+                                <h3 class="fw-bold text-navy mb-3"><i class="fa-solid fa-magnifying-glass text-warning me-2"></i> Student ID & Roll Number Search</h3>
+                                <p class="text-muted">Parents and students can check ID Card details by entering student roll number below.</p>
+                                
+                                <div class="input-group my-4">
+                                    <input type="text" id="rollInput" class="form-control form-control-lg" placeholder="Enter Roll No (e.g. AFS-101)">
+                                    <button class="btn btn-yellow px-4 fw-bold" onclick="searchStudent()">Search Student</button>
+                                </div>
+
+                                <div id="searchResult" class="p-3 bg-light rounded-3 border d-none">
+                                    <div class="d-flex align-items-center gap-3">
+                                        <i class="fa-solid fa-circle-user fa-3x text-navy"></i>
+                                        <div>
+                                            <h6 class="fw-bold text-navy mb-1" id="resName">Student Found</h6>
+                                            <p class="mb-0 text-muted small" id="resDetail">Class 8th | Roll #: AFS-101 | Status: Active Card</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. TEACHERS NAME TAB -->
+                <div class="tab-pane fade" id="pills-teachers" role="tabpanel">
+                    <div class="row g-4">
+                        <!-- Teacher 1 -->
+                        <div class="col-md-6 col-lg-3">
+                            <div class="custom-card text-center p-4">
+                                <div class="mb-3">
+                                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=300&auto=format&fit=crop" class="rounded-circle shadow border border-3 border-warning" width="120" height="120" style="object-fit: cover;" alt="Teacher">
+                                </div>
+                                <h5 class="fw-bold text-navy mb-1">Mrs. Ayesha Khan</h5>
+                                <span class="teacher-badge mb-3">Headmistress</span>
+                                <p class="text-muted small mb-0"><i class="fa-solid fa-book-open text-warning me-1"></i> M.Sc English Literature</p>
+                            </div>
+                        </div>
+
+                        <!-- Teacher 2 -->
+                        <div class="col-md-6 col-lg-3">
+                            <div class="custom-card text-center p-4">
+                                <div class="mb-3">
+                                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=300&auto=format&fit=crop" class="rounded-circle shadow border border-3 border-warning" width="120" height="120" style="object-fit: cover;" alt="Teacher">
+                                </div>
+                                <h5 class="fw-bold text-navy mb-1">Mr. Tariq Mehmood</h5>
+                                <span class="teacher-badge mb-3">Senior Physics Faculty</span>
+                                <p class="text-muted small mb-0"><i class="fa-solid fa-atom text-warning me-1"></i> M.Sc Physics (12+ Yrs Exp)</p>
+                            </div>
+                        </div>
+
+                        <!-- Teacher 3 -->
+                        <div class="col-md-6 col-lg-3">
+                            <div class="custom-card text-center p-4">
+                                <div class="mb-3">
+                                    <img src="https://images.unsplash.com/photo-1580894732413-8d6268875560?q=80&w=300&auto=format&fit=crop" class="rounded-circle shadow border border-3 border-warning" width="120" height="120" style="object-fit: cover;" alt="Teacher">
+                                </div>
+                                <h5 class="fw-bold text-navy mb-1">Ms. Fatima Zahra</h5>
+                                <span class="teacher-badge mb-3">Computer Instructor</span>
+                                <p class="text-muted small mb-0"><i class="fa-solid fa-laptop-code text-warning me-1"></i> BS Computer Science</p>
+                            </div>
+                        </div>
+
+                        <!-- Teacher 4 -->
+                        <div class="col-md-6 col-lg-3">
+                            <div class="custom-card text-center p-4">
+                                <div class="mb-3">
+                                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=300&auto=format&fit=crop" class="rounded-circle shadow border border-3 border-warning" width="120" height="120" style="object-fit: cover;" alt="Teacher">
+                                </div>
+                                <h5 class="fw-bold text-navy mb-1">Ms. Sadia Usman</h5>
+                                <span class="teacher-badge mb-3">Mathematics Specialist</span>
+                                <p class="text-muted small mb-0"><i class="fa-solid fa-calculator text-warning me-1"></i> M.Sc Mathematics</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. SCHOOL ROOMS & LABS TAB -->
+                <div class="tab-pane fade" id="pills-rooms" role="tabpanel">
+                    <div class="row g-4">
+                        <!-- Room 1 -->
+                        <div class="col-md-6 col-lg-4">
+                            <div class="custom-card">
+                                <div class="img-zoom-container">
+                                    <img src="https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=600&auto=format&fit=crop" alt="Smart Classroom">
+                                </div>
+                                <div class="p-4">
+                                    <h5 class="fw-bold text-navy">Air-Conditioned Smart Classrooms</h5>
+                                    <p class="text-muted small">Equipped with multimedia projectors, comfortable ergonomic furniture, and interactive whiteboards.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Room 2 -->
+                        <div class="col-md-6 col-lg-4">
+                            <div class="custom-card">
+                                <div class="img-zoom-container">
+                                    <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=600&auto=format&fit=crop" alt="Science Laboratory">
+                                </div>
+                                <div class="p-4">
+                                    <h5 class="fw-bold text-navy">Advanced Science Laboratories</h5>
+                                    <p class="text-muted small">Fully equipped Physics, Chemistry, and Biology labs with modern safety apparatus and tools.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Room 3 -->
+                        <div class="col-md-6 col-lg-4">
+                            <div class="custom-card">
+                                <div class="img-zoom-container">
+                                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=600&auto=format&fit=crop" alt="Computer Lab">
+                                </div>
+                                <div class="p-4">
+                                    <h5 class="fw-bold text-navy">High-Tech IT & Computer Lab</h5>
+                                    <p class="text-muted small">50+ Latest i7 computer systems with high-speed internet for digital learning and coding classes.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Room 4 -->
+                        <div class="col-md-6 col-lg-6">
+                            <div class="custom-card">
+                                <div class="img-zoom-container" style="height: 220px;">
+                                    <img src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=800&auto=format&fit=crop" alt="Library">
+                                </div>
+                                <div class="p-4">
+                                    <h5 class="fw-bold text-navy">Central Library & Reading Hall</h5>
+                                    <p class="text-muted small">Over 10,000 academic books, storybooks, and digital journals in a quiet study environment.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Room 5 -->
+                        <div class="col-md-6 col-lg-6">
+                            <div class="custom-card">
+                                <div class="img-zoom-container" style="height: 220px;">
+                                    <img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?q=80&w=800&auto=format&fit=crop" alt="Sports Hall">
+                                </div>
+                                <div class="p-4">
+                                    <h5 class="fw-bold text-navy">Indoor Sports & Activity Area</h5>
+                                    <p class="text-muted small">Table tennis, chess, gymnastics, and multi-purpose activity space for physical development.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Facilities Overview Section -->
+    <section id="facilities" class="section-padding bg-white">
+        <div class="container">
+            <div class="text-center section-title-wrapper">
+                <span class="section-subtitle">World Class Campus</span>
+                <h2 class="section-title">School Facilities</h2>
+                <p class="text-muted fs-5 mt-2">We offer a safe, comfortable, and nurturing environment for every student.</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="facility-card">
+                        <div class="facility-icon-wrapper">
+                            <i class="fa-solid fa-bus"></i>
+                        </div>
+                        <h5 class="fw-bold text-navy mb-2">Transport Service</h5>
+                        <p class="text-muted small mb-0">Air-conditioned vans and buses covering all major city routes with GPS tracking.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="facility-card">
+                        <div class="facility-icon-wrapper">
+                            <i class="fa-solid fa-flask"></i>
+                        </div>
+                        <h5 class="fw-bold text-navy mb-2">Science & Tech Labs</h5>
+                        <p class="text-muted small mb-0">Hands-on practical education under experienced laboratory instructors.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="facility-card">
+                        <div class="facility-icon-wrapper">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                        <h5 class="fw-bold text-navy mb-2">24/7 CCTV Security</h5>
+                        <p class="text-muted small mb-0">Complete campus monitoring with trained security guards ensuring student safety.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="facility-card">
+                        <div class="facility-icon-wrapper">
+                            <i class="fa-solid fa-volleyball"></i>
+                        </div>
+                        <h5 class="fw-bold text-navy mb-2">Playground & Turf</h5>
+                        <p class="text-muted small mb-0">Spacious outdoor sports ground for cricket, football, and athletics.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer id="contact" class="footer-custom">
+        <div class="container">
+            <div class="row gy-5 mb-5">
+                <!-- Col 1: About -->
+                <div class="col-lg-4">
+                    <a class="navbar-brand d-flex align-items-center gap-2 mb-3" href="#">
+                        <i class="fa-solid fa-graduation-cap fa-lg text-warning"></i>
+                        <span class="text-white">Alfalah School</span>
+                    </a>
+                    <p class="text-light opacity-75 pe-lg-4">
+                        Alfalah School is dedicated to nurturing academic excellence, Islamic values, and modern digital skills to shape successful futures.
+                    </p>
+                    <div class="d-flex gap-3 mt-4">
+                        <a href="mailto:info@alfalahschool.edu.pk" class="social-btn" title="Gmail">
+                            <i class="fa-solid fa-envelope"></i>
+                        </a>
+                        <a href="https://facebook.com" target="_blank" class="social-btn" title="Facebook">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a href="tel:+923001234567" class="social-btn" title="Call Contact">
+                            <i class="fa-solid fa-phone"></i>
+                        </a>
+                        <a href="https://tiktok.com" target="_blank" class="social-btn" title="TikTok">
+                            <i class="fa-brands fa-tiktok"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Quick Links -->
+                <div class="col-md-6 col-lg-3">
+                    <h5 class="text-warning fw-bold mb-4">Quick Navigation</h5>
+                    <ul class="list-unstyled gap-2 d-flex flex-column">
+                        <li><a href="#home" class="text-light text-decoration-none opacity-75 hover-warning"><i class="fa-solid fa-chevron-right text-warning fs-6 me-2"></i> Home Page</a></li>
+                        <li><a href="#categories-section" class="text-light text-decoration-none opacity-75 hover-warning"><i class="fa-solid fa-chevron-right text-warning fs-6 me-2"></i> Admissions & Fees</a></li>
+                        <li><a href="#categories-section" onclick="switchCategoryTab('teachers-tab')" class="text-light text-decoration-none opacity-75 hover-warning"><i class="fa-solid fa-chevron-right text-warning fs-6 me-2"></i> Faculty Directory</a></li>
+                        <li><a href="#facilities" class="text-light text-decoration-none opacity-75 hover-warning"><i class="fa-solid fa-chevron-right text-warning fs-6 me-2"></i> Campus Facilities</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Contact Info -->
+                <div class="col-md-6 col-lg-5">
+                    <h5 class="text-warning fw-bold mb-4">Official Contact & Address</h5>
+                    <div class="d-flex flex-column gap-3">
+                        <div class="d-flex align-items-start gap-3">
+                            <i class="fa-solid fa-location-dot text-warning fs-5 mt-1"></i>
+                            <span class="opacity-75">Alfalah School Main Campus, Education Avenue, Sector 5-A, Main Boulevard.</span>
+                        </div>
+                        <div class="d-flex align-items-center gap-3">
+                            <i class="fa-solid fa-phone text-warning fs-5"></i>
+                            <span class="opacity-75">+92 (021) 3456-7890 / +92 300 1234567</span>
+                        </div>
+                        <div class="d-flex align-items-center gap-3">
+                            <i class="fa-solid fa-envelope text-warning fs-5"></i>
+                            <span class="opacity-75">admissions@alfalahschool.edu.pk</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="border-secondary opacity-25 my-4">
+
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center small opacity-75">
+                <p class="mb-0">&copy; 2026 Alfalah School. All Rights Reserved.</p>
+                <p class="mb-0">Designed with modern Navy & Yellow Theme.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Admission Modal -->
+    <div class="modal fade" id="admissionModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold"><i class="fa-solid fa-graduation-cap text-warning me-2"></i> Alfalah School Online Admission</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4 p-md-5">
+                    <form onsubmit="event.preventDefault(); alert('Application submitted successfully!'); bootstrap.Modal.getInstance(document.getElementById('admissionModal')).hide();">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label fw-semibold">Student Name</label>
+                                <input type="text" class="form-control" required placeholder="Full Name">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label fw-semibold">Father's Name</label>
+                                <input type="text" class="form-control" required placeholder="Father / Guardian Name">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label fw-semibold">Class</label>
+                                <select class="form-select" required>
+                                    <option value="">Select Grade...</option>
+                                    <option>Nursery / KG</option>
+                                    <option>Class 1 to 5</option>
+                                    <option>Class 6 to 8</option>
+                                    <option>Class 9 & 10</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label fw-semibold">Contact Mobile</label>
+                                <input type="tel" class="form-control" required placeholder="0300-XXXXXXX">
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label fw-semibold">Email Address</label>
+                                <input type="email" class="form-control" placeholder="name@gmail.com">
+                            </div>
+                        </div>
+                        <div class="mt-4 text-end">
+                            <button type="button" class="btn btn-light me-2" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-yellow px-4">Submit Application</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 JavaScript Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Switch tabs dynamically from navbar dropdown
+        function switchCategoryTab(tabId) {
+            const triggerEl = document.getElementById(tabId);
+            if (triggerEl) {
+                const tab = new bootstrap.Tab(triggerEl);
+                tab.show();
+            }
+        }
+
+        // Student ID search mockup
+        function searchStudent() {
+            const rollVal = document.getElementById('rollInput').value.trim();
+            const resBox = document.getElementById('searchResult');
+            const resName = document.getElementById('resName');
+            const resDetail = document.getElementById('resDetail');
+
+            if(rollVal === '') {
+                alert('Please enter a roll number first!');
+                return;
+            }
+
+            resBox.classList.remove('d-none');
+            resName.innerText = "Student Roll: " + rollVal.toUpperCase();
+            resDetail.innerText = "Class: 9th Section B | Active ID Card Issued | Alfalah School Campus";
+            document.getElementById('preview-roll').innerText = rollVal.toUpperCase();
+        }
+    </script>
+</body>
+</html>
